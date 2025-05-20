@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You Are An Idiot Meme</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      cursor: pointer;
+    }
+    img {
+      max-width: 90vw;
+      height: auto;
+      user-select: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="You are an idiot!!.gif" alt="You are an idiot meme" />
+
+  <audio id="memeAudio" src="parroscat.mp3"></audio>
+
+  <script>
+    const audio = document.getElementById('memeAudio');
+
+    document.body.addEventListener('click', () => {
+      audio.currentTime = 0;  // rewind to start
+      audio.play().catch(error => {
+        console.error('Error playing audio:', error);
+        alert('Audio playback failed. Try clicking again or check your browser settings.');
+      });
+    });
+  </script>
+
+</body>
+</html>
